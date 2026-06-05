@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>汉字消消乐</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- ========== 开始界面 ========== -->
+    <div id="startScreen" class="screen active">
+        <div class="start-content">
+            <div class="start-title">汉字消消乐</div>
+            <div class="start-subtitle">认读汉字，赢取奖杯</div>
+            <div class="start-info">共3页 · 90个汉字</div>
+            <button id="startBtn" class="btn-start">开始游戏</button>
+        </div>
+    </div>
+
+    <!-- ========== 游戏界面 ========== -->
+    <div id="gameScreen" class="screen">
+        <!-- 顶部栏 -->
+        <div class="game-header">
+            <div class="progress-info">
+                <span id="eliminatedCount">0</span> / <span id="totalCount">30</span>
+            </div>
+            <div class="page-info">
+                第 <span id="currentPage">1</span> 页 / 共 3 页
+            </div>
+        </div>
+
+        <!-- 汉字网格 -->
+        <div id="charGrid" class="char-grid"></div>
+
+        <!-- 语音识别遮罩 -->
+        <div id="speechOverlay" class="speech-overlay">
+            <div class="speech-content">
+                <div class="speech-icon">🎤</div>
+                <div class="speech-text">正在听你读...</div>
+                <div id="speechTip" class="speech-tip"></div>
+                <button id="cancelListenBtn" class="btn-cancel-listen">取消</button>
+            </div>
+        </div>
+
+        <!-- 底部导航 -->
+        <div class="game-footer">
+            <button id="prevPageBtn" class="btn-page" disabled>上一页</button>
+            <div class="page-dots">
+                <span class="dot active" data-page="0"></span>
+                <span class="dot" data-page="1"></span>
+                <span class="dot" data-page="2"></span>
+            </div>
+            <button id="nextPageBtn" class="btn-page">下一页</button>
+        </div>
+    </div>
+
+    <!-- ========== 单页完成奖励 ========== -->
+    <div id="pageRewardOverlay" class="reward-overlay">
+        <div class="reward-content page-reward">
+            <div class="medium-trophy">
+                <div class="cup">
+                    <div class="handle handle-l"></div>
+                    <div class="handle handle-r"></div>
+                </div>
+                <div class="star">★</div>
+                <div class="neck"></div>
+                <div class="base"></div>
+            </div>
+            <div class="reward-text">你真棒，请继续下一页！</div>
+            <button id="pageRewardBtn" class="btn-reward">继续下一页</button>
+        </div>
+    </div>
+
+    <!-- ========== 终极奖励 ========== -->
+    <div id="finalRewardOverlay" class="reward-overlay">
+        <div class="reward-content final-reward">
+            <div class="huge-trophy">
+                <div class="cup">
+                    <div class="handle handle-l"></div>
+                    <div class="handle handle-r"></div>
+                </div>
+                <div class="star">★</div>
+                <div class="neck"></div>
+                <div class="base"></div>
+            </div>
+            <div class="reward-text final-text">太厉害了！全部完成！</div>
+            <button id="finalRewardBtn" class="btn-reward">再来一次</button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
